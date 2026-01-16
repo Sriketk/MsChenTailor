@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -32,27 +33,42 @@ export default function Page() {
     <div className="relative z-10 min-h-screen">
       <NoiseOverlay />
       {/* Hero Section */}
-      <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 py-16 text-center">
-        <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-          Ms. Chen
-        </h1>
-        <h2 className="mb-4 text-3xl font-medium text-muted-foreground md:text-4xl">
-          Expert Tailor
-        </h2>
-        <p className="mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          Crafting perfection with precision, one stitch at a time. Your trusted
-          partner for expert tailoring services.
-        </p>
-        <Button
-          size="lg"
-          onClick={() => {
-            document
-              .getElementById("contact")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }}
-        >
-          Get in Touch
-        </Button>
+      <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 py-16">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:gap-12">
+          <div className="flex-shrink-0">
+            <div className="relative size-64 overflow-hidden rounded-2xl md:size-80">
+              <Image
+                src="/chen_profile.jpg"
+                alt="Ms. Chen, Expert Tailor"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <h1 className="mb-2 text-5xl font-bold tracking-tight md:text-7xl">
+              Ms. Chen
+            </h1>
+            <h2 className="mb-6 text-3xl font-medium text-muted-foreground md:text-4xl">
+              Expert Tailor
+            </h2>
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Crafting perfection with precision, one stitch at a time. Your trusted
+              partner for expert tailoring services.
+            </p>
+            <Button
+              size="lg"
+              onClick={() => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }}
+            >
+              Get in Touch
+            </Button>
+          </div>
+        </div>
       </section>
 
       <Separator />
