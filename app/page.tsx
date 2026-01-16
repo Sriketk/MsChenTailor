@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { HeartIcon, ScissorsIcon, SparklesIcon } from "lucide-react";
+import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { ScissorsIcon, SparklesIcon, HeartIcon } from "lucide-react"
+} from "@/components/ui/card";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
 
 function NoiseOverlay() {
   return (
@@ -25,7 +25,7 @@ function NoiseOverlay() {
         opacity: 0.5,
       }}
     />
-  )
+  );
 }
 
 export default function Page() {
@@ -38,32 +38,32 @@ export default function Page() {
           <div className="flex-shrink-0">
             <div className="relative size-64 overflow-hidden rounded-2xl md:size-80">
               <Image
-                src="/chen_profile.jpg"
                 alt="Ms. Chen, Expert Tailor"
-                fill
                 className="object-cover"
+                fill
                 priority
+                src="/chen_profile.jpg"
               />
             </div>
           </div>
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
-            <h1 className="mb-2 text-5xl font-bold tracking-tight md:text-7xl">
+            <h1 className="mb-2 font-bold text-5xl tracking-tight md:text-7xl">
               Ms. Chen
             </h1>
-            <h2 className="mb-6 text-3xl font-medium text-muted-foreground md:text-4xl">
+            <h2 className="mb-6 font-medium text-3xl text-muted-foreground md:text-4xl">
               Expert Tailor
             </h2>
-            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Crafting perfection with precision, one stitch at a time. Your trusted
-              partner for expert tailoring services.
+            <p className="mb-8 max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
+              Crafting perfection with precision, one stitch at a time. Your
+              trusted partner for expert tailoring services.
             </p>
             <Button
-              size="lg"
               onClick={() => {
                 document
                   .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
+              size="lg"
             >
               Get in Touch
             </Button>
@@ -89,8 +89,8 @@ export default function Page() {
               </p>
               <p>
                 Whether it&apos;s a simple alteration or a complete custom
-                creation, Ms. Chen approaches each project with the same level of
-                care and precision, ensuring that every piece fits perfectly
+                creation, Ms. Chen approaches each project with the same level
+                of care and precision, ensuring that every piece fits perfectly
                 and reflects the wearer&apos;s unique style.
               </p>
             </CardContent>
@@ -103,7 +103,7 @@ export default function Page() {
       {/* Services Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-4xl font-bold">Our Services</h2>
+          <h2 className="mb-12 text-center font-bold text-4xl">Our Services</h2>
           <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <CardHeader>
@@ -149,10 +149,10 @@ export default function Page() {
       {/* Gallery Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-4xl font-bold">Our Work</h2>
+          <h2 className="mb-12 text-center font-bold text-4xl">Our Work</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <Card key={i} className="overflow-hidden p-0">
+              <Card className="overflow-hidden p-0" key={i}>
                 <AspectRatio ratio={4 / 3}>
                   <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
                     <span className="text-sm">Image {i}</span>
@@ -169,7 +169,7 @@ export default function Page() {
       {/* Testimonials Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-4xl font-bold">
+          <h2 className="mb-12 text-center font-bold text-4xl">
             What Our Clients Say
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -187,9 +187,9 @@ export default function Page() {
             <Card>
               <CardHeader>
                 <CardDescription className="mb-2 italic">
-                  &quot;I&apos;ve been coming to Ms. Chen for years. She
-                  always makes my suits fit perfectly. Professional, reliable,
-                  and truly an expert in her craft.&quot;
+                  &quot;I&apos;ve been coming to Ms. Chen for years. She always
+                  makes my suits fit perfectly. Professional, reliable, and
+                  truly an expert in her craft.&quot;
                 </CardDescription>
                 <CardTitle className="text-base">— James T.</CardTitle>
               </CardHeader>
@@ -212,11 +212,9 @@ export default function Page() {
       <Separator />
 
       {/* Contact Section */}
-      <section id="contact" className="px-4 py-16 md:px-8">
+      <section className="px-4 py-16 md:px-8" id="contact">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-4xl font-bold">
-            Get in Touch
-          </h2>
+          <h2 className="mb-12 text-center font-bold text-4xl">Get in Touch</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Card>
               <CardHeader>
@@ -225,7 +223,7 @@ export default function Page() {
               <CardContent className="space-y-4">
                 <div>
                   <p className="font-medium">Address</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     123 Main Street
                     <br />
                     Your City, ST 12345
@@ -234,14 +232,14 @@ export default function Page() {
                 <Separator />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     (555) 123-4567
                   </p>
                 </div>
                 <Separator />
                 <div>
                   <p className="font-medium">Hours</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     Monday - Friday: 9:00 AM - 6:00 PM
                     <br />
                     Saturday: 10:00 AM - 4:00 PM
@@ -267,17 +265,17 @@ export default function Page() {
                       <FieldLabel htmlFor="email">Email</FieldLabel>
                       <Input
                         id="email"
-                        type="email"
                         placeholder="your.email@example.com"
                         required
+                        type="email"
                       />
                     </Field>
                     <Field>
                       <FieldLabel htmlFor="phone">Phone</FieldLabel>
                       <Input
                         id="phone"
-                        type="tel"
                         placeholder="(555) 123-4567"
+                        type="tel"
                       />
                     </Field>
                     <Field>
@@ -288,7 +286,7 @@ export default function Page() {
                         rows={5}
                       />
                     </Field>
-                    <Button type="submit" className="w-full">
+                    <Button className="w-full" type="submit">
                       Send Message
                     </Button>
                   </FieldGroup>
@@ -300,9 +298,12 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-8 text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} Ms. Chen Expert Tailor. All rights reserved.</p>
+      <footer className="border-t py-8 text-center text-muted-foreground text-sm">
+        <p>
+          © {new Date().getFullYear()} Ms. Chen Expert Tailor. All rights
+          reserved.
+        </p>
       </footer>
     </div>
-  )
+  );
 }

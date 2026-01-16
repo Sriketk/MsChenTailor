@@ -10,7 +10,8 @@ const cormorantGaramond = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "Ms. Chen Expert Tailor",
-  description: "Expert tailoring services - Alterations, Custom Tailoring, and Bridal & Formal Wear",
+  description:
+    "Expert tailoring services - Alterations, Custom Tailoring, and Bridal & Formal Wear",
 };
 
 export default function RootLayout({
@@ -20,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={cormorantGaramond.variable} lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
