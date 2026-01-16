@@ -1,5 +1,6 @@
 import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
 import { cva } from "class-variance-authority";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon } from "lucide-react";
@@ -24,21 +25,23 @@ function NavigationMenu({
   );
 }
 
-function NavigationMenuList({
-  className,
-  ...props
-}: NavigationMenuPrimitive.List.Props) {
+const NavigationMenuList = React.forwardRef<
+  HTMLDivElement,
+  NavigationMenuPrimitive.List.Props
+>(({ className, ...props }, ref) => {
   return (
     <NavigationMenuPrimitive.List
+      ref={ref}
       data-slot="navigation-menu-list"
       className={cn(
         "gap-0 group flex flex-1 list-none items-center justify-center",
         className
       )}
-      {...(props as NavigationMenuPrimitive.List.Props)}
+      {...props}
     />
   );
-}
+});
+NavigationMenuList.displayName = "NavigationMenuList";
 
 function NavigationMenuItem({
   className,
