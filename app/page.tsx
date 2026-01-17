@@ -1,6 +1,8 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import GoogleReview from "@/components/ui/custom/google-review";
 import MasonryGrid from "@/components/ui/custom/masonry-grid";
@@ -89,17 +91,29 @@ export default function Page() {
       {/* Gallery Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Gallery</h2>
+          <div className="mb-12 flex items-center justify-center gap-2">
+            <h2 className="font-bold text-4xl">Gallery</h2>
+            <Link
+              className="inline-flex items-center text-foreground transition-colors hover:text-foreground/80"
+              href="/gallery"
+            >
+              <ArrowRight className="size-6" />
+            </Link>
+          </div>
           <MasonryGrid
             className="columns-1 gap-4 sm:columns-2 md:columns-3"
             gap="1rem"
             items={[
+              "bday.jpg",
+              "black.jpg",
               "blue.jpg",
+              "cheetah.jpg",
               "fringe.jpg",
               "green.jpg",
               "red.jpg",
               "redfull.jpg",
               "silk.jpg",
+              "suit.jpg",
               "unnamed.jpg",
             ]}
             renderItem={(imageName) => (
@@ -129,7 +143,7 @@ export default function Page() {
           </h2>
           <div className="space-y-6 text-lg leading-relaxed">
             <div className="my-6 flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="relative w-full flex-shrink-0 overflow-hidden md:w-auto md:max-w-xs">
+              <div className="relative w-full shrink-0 overflow-hidden md:w-auto md:max-w-xs">
                 <Image
                   alt="Ms. Chen's tailoring shop"
                   className="h-auto w-full object-cover"
@@ -384,7 +398,10 @@ export default function Page() {
                     />
                   )}
                   {review.type === "tiktok" && review.videoUrl && (
-                    <TikTokEmbed videoUrl={review.videoUrl} />
+                    <TikTokEmbed
+                      href={(review as { href?: string }).href}
+                      videoUrl={review.videoUrl}
+                    />
                   )}
                 </CardContent>
               </Card>

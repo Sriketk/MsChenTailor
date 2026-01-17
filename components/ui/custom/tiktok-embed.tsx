@@ -6,11 +6,13 @@ import { cn } from "@/lib/utils";
 
 interface TikTokEmbedProps {
   videoUrl: string;
+  href?: string;
   className?: string;
 }
 
 export default function TikTokEmbed({
   videoUrl,
+  href,
   className,
 }: TikTokEmbedProps) {
   const [embedHtml, setEmbedHtml] = useState<string>("");
@@ -75,11 +77,26 @@ export default function TikTokEmbed({
     return null;
   }
 
-  return (
+  const embedContent = (
     <div
       ref={containerRef}
       className={cn("tiktok-embed-container", className)}
       dangerouslySetInnerHTML={{ __html: embedHtml }}
     />
   );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+        className="block transition-opacity hover:opacity-80"
+      >
+        {embedContent}
+      </a>
+    );
+  }
+
+  return embedContent;
 }

@@ -59,7 +59,10 @@ export default function GoogleReview({
         href={href}
         rel="noopener noreferrer"
         target="_blank"
-        className="block transition-opacity hover:opacity-80"
+        className="relative z-10 block w-full cursor-pointer transition-opacity hover:opacity-80"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
       >
         {content}
       </a>
