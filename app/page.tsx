@@ -2,7 +2,6 @@
 
 import { HeartIcon, ScissorsIcon, SparklesIcon } from "lucide-react";
 import Image from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import MasonryGrid from "@/components/ui/custom/masonry-grid";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -89,18 +89,33 @@ export default function Page() {
       {/* Gallery Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Our Work</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <Card className="overflow-hidden p-0" key={i}>
-                <AspectRatio ratio={4 / 3}>
-                  <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
-                    <span className="text-sm">Image {i}</span>
-                  </div>
-                </AspectRatio>
+          <h2 className="mb-12 text-center font-bold text-4xl">Gallery</h2>
+          <MasonryGrid
+            className="columns-1 gap-4 sm:columns-2 md:columns-3"
+            gap="1rem"
+            items={[
+              "blue.jpg",
+              "fringe.jpg",
+              "green.jpg",
+              "red.jpg",
+              "redfull.jpg",
+              "silk.jpg",
+              "unnamed.jpg",
+            ]}
+            renderItem={(imageName) => (
+              <Card className="overflow-hidden rounded-none p-0">
+                <div className="relative w-full">
+                  <Image
+                    alt={`Ms. Chen's tailoring work - ${imageName.replace(".jpg", "")}`}
+                    className="h-auto w-full object-cover"
+                    height={800}
+                    src={`/work/${imageName}`}
+                    width={600}
+                  />
+                </div>
               </Card>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </section>
 
@@ -115,16 +130,53 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-4 text-base leading-relaxed">
               <p>
-                With decades of experience in the art of tailoring, Ms. Chen
-                brings unparalleled expertise and attention to detail to every
-                garment. Her passion for craftsmanship and dedication to
-                perfection has made her a trusted name in the community.
+                Meet Ms. Chen Expert Tailoring, one of the few businesses
+                remaining in East Broadway Mall.
               </p>
               <p>
-                Whether it&apos;s a simple alteration or a complete custom
-                creation, Ms. Chen approaches each project with the same level
-                of care and precision, ensuring that every piece fits perfectly
-                and reflects the wearer&apos;s unique style.
+                Growing up in Fujian Lianjiang, Ms. Chen didn&apos;t have a lot
+                of opportunities. She could either become a hairdresser or a
+                seamstress. She was interested in cutting hair, but
+                unfortunately, a major illness left her disabled and made it
+                very difficult to use small haircutting tools.
+              </p>
+              <p>
+                As she was always interested in fashion, she taught herself how
+                to sew at 13. She started by helping her neighbors sew simple
+                garments, then apprenticed at a local shop before saving up
+                enough money to open her small business. Sewing brought her a
+                lot of satisfaction. She was skilled at her craft, and people
+                from neighboring regions would visit her shop to get their
+                clothes made and altered.
+              </p>
+              <p>
+                In 1993, Ms. Chen&apos;s husband came to the U.S. in search of
+                better economic opportunities. She tried for ten years before
+                successfully reuniting with her husband in 2003. After arriving,
+                she settled in Flushing and got into the beauty industry doing
+                at-home facials. However, she yearned to open a small business
+                again someday. Unfortunately, no storefronts were available in
+                Chinatown, so she worked as a seamstress at another clothing
+                store in the meantime. In 2004, she opened her first shop
+                outside East Broadway Mall. She chose that location as it was
+                convenient and attracted a lot of foot traffic. In 2006, she
+                moved her business inside the mall, and she&apos;s been there
+                ever since.
+              </p>
+              <p>
+                Sixteen years later, Ms. Chen continues to sew and mend clothes
+                for her customers in the basement of East Broadway Mall. She has
+                a diverse clientele and has even altered clothes for fashion
+                designers and models. During the COVID-19 pandemic, she was
+                closed for a year and a half. Loyal customers kept ringing her
+                phone, so she finally reopened her business in July 2021.
+              </p>
+              <p>
+                Ms. Chen prides herself on her craftsmanship and expertise.
+                Whether it&apos;s a pair of blue jeans or a fancy evening gown,
+                she will always help you alter your clothes until you&apos;re
+                satisfied. Visit her in person or give her a call at
+                917-330-1538 if you need her expert tailoring services!
               </p>
             </CardContent>
           </Card>
