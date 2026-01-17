@@ -96,7 +96,7 @@ function HeroSection({
                 ? { opacity: 1, y: 0 }
                 : { opacity: 0, y: prefersReducedMotion ? 0 : 10 }
             }
-            className="flex w-full max-w-3xl flex-col items-center space-y-4 text-left sm:space-y-6 md:space-y-8"
+            className="flex w-full max-w-3xl flex-col items-center space-y-4 px-4 text-left sm:space-y-6 sm:px-6 md:space-y-8 md:px-0"
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.5,
