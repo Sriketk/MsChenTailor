@@ -1,8 +1,10 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import GoogleReview from "@/components/ui/custom/google-review";
 import MasonryGrid from "@/components/ui/custom/masonry-grid";
@@ -24,23 +26,55 @@ function NoiseOverlay() {
 }
 
 export default function Page() {
+  const heroRef = useRef(null);
+  const galleryRef = useRef(null);
+  const aboutRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const heroInView = useInView(heroRef, { once: true, amount: 0.3 });
+  const galleryInView = useInView(galleryRef, { once: true, amount: 0.2 });
+  const aboutInView = useInView(aboutRef, { once: true, amount: 0.2 });
+  const testimonialsInView = useInView(testimonialsRef, {
+    once: true,
+    amount: 0.2,
+  });
+  const contactInView = useInView(contactRef, { once: true, amount: 0.2 });
+
   return (
     <div className="relative z-10 min-h-screen">
       <NoiseOverlay />
       {/* Header */}
-      <header className="py-3 md:py-4">
+      <motion.header
+        animate={{ opacity: 1, y: 0 }}
+        className="py-3 md:py-4"
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      >
         <div className="mx-auto max-w-6xl">
           <h1 className="text-center font-semibold text-2xl tracking-tight sm:text-3xl md:text-4xl">
             Ms. Chen Expert Tailoring
           </h1>
         </div>
-      </header>
+      </motion.header>
       {/* Hero Section */}
-      <section className="flex min-h-screen flex-col items-center justify-center pt-0 pb-8 sm:pb-12 md:pb-12">
+      <section
+        className="flex min-h-screen flex-col items-center justify-center pt-0 pb-8 sm:pb-12 md:pb-12"
+        ref={heroRef}
+      >
         <div className="mx-auto w-full max-w-4xl">
           <div className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Image Section */}
-            <div className="-mt-4 w-full max-w-xl sm:-mt-2 sm:max-w-2xl">
+            <motion.div
+              animate={
+                heroInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.95 }
+              }
+              className="-mt-4 w-full max-w-xl sm:-mt-2 sm:max-w-2xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            >
               <div className="relative mx-auto w-full overflow-hidden shadow-2xl">
                 <Image
                   alt="Ms. Chen, Expert Tailor"
@@ -51,10 +85,17 @@ export default function Page() {
                   width={800}
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Content Section */}
-            <div className="flex w-full max-w-3xl flex-col items-center space-y-4 text-left sm:space-y-6 md:space-y-8">
+            <motion.div
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              className="flex w-full max-w-3xl flex-col items-center space-y-4 text-left sm:space-y-6 md:space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            >
               {/* Brief Introduction */}
               <p className="w-full text-base text-foreground leading-relaxed sm:text-lg md:text-xl">
                 Meet Ms. Chen Expert Tailoring, one of the few businesses
@@ -66,7 +107,18 @@ export default function Page() {
               </p>
 
               {/* Contact Information */}
-              <div className="w-full space-y-3">
+              <motion.div
+                animate={
+                  heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+                }
+                className="w-full space-y-3"
+                initial={{ opacity: 0, y: 10 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
                 <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row sm:gap-4">
                   <p className="text-base text-foreground sm:text-lg">
                     88 E Broadway, Basement Level B42, New York, NY 10002
@@ -80,8 +132,8 @@ export default function Page() {
                   <p>Monday: 11 AM - 5 PM</p>
                   <p>Tuesday - Saturday: 9:30 AM - 7 PM</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -89,9 +141,16 @@ export default function Page() {
       <Separator />
 
       {/* Gallery Section */}
-      <section className="px-4 py-16 md:px-8">
+      <section className="px-4 py-16 md:px-8" ref={galleryRef}>
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 flex items-center justify-center gap-2">
+          <motion.div
+            animate={
+              galleryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            className="mb-12 flex items-center justify-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          >
             <h2 className="font-bold text-4xl">Gallery</h2>
             <Link
               className="inline-flex items-center text-foreground transition-colors hover:text-foreground/80"
@@ -99,7 +158,7 @@ export default function Page() {
             >
               <ArrowRight className="size-6" />
             </Link>
-          </div>
+          </motion.div>
           <MasonryGrid
             className="columns-1 gap-4 sm:columns-2 md:columns-3"
             gap="1rem"
@@ -136,14 +195,35 @@ export default function Page() {
       <Separator />
 
       {/* About Section */}
-      <section className="px-4 py-16 md:px-8">
+      <section className="px-4 py-16 md:px-8" ref={aboutRef}>
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-6 text-center font-bold text-3xl">
+          <motion.h2
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            className="mb-6 text-center font-bold text-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          >
             About Ms. Chen
-          </h2>
-          <div className="space-y-6 text-lg leading-relaxed">
+          </motion.h2>
+          <motion.div
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            className="space-y-6 text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          >
             <div className="my-6 flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="relative w-full shrink-0 overflow-hidden md:w-auto md:max-w-xs">
+              <motion.div
+                animate={
+                  aboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                }
+                className="relative w-full shrink-0 overflow-hidden md:w-auto md:max-w-xs"
+                initial={{ opacity: 0, x: -20 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
                 <Image
                   alt="Ms. Chen's tailoring shop"
                   className="h-auto w-full object-cover"
@@ -151,8 +231,19 @@ export default function Page() {
                   src="/chen/about/cream.jpg"
                   width={300}
                 />
-              </div>
-              <div className="flex-1 space-y-4">
+              </motion.div>
+              <motion.div
+                animate={
+                  aboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }
+                }
+                className="flex-1 space-y-4"
+                initial={{ opacity: 0, x: 20 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
                 <p>
                   Meet Ms. Chen Expert Tailoring, one of the few businesses
                   remaining in East Broadway Mall.
@@ -187,7 +278,7 @@ export default function Page() {
                   traffic. In 2006, she moved her business inside the mall, and
                   she&apos;s been there ever since.
                 </p>
-              </div>
+              </motion.div>
             </div>
             <p>
               Sixteen years later, Ms. Chen continues to sew and mend clothes
@@ -204,18 +295,25 @@ export default function Page() {
               satisfied. Visit her in person or give her a call at 917-330-1538
               if you need her expert tailoring services!
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <Separator />
 
       {/* Testimonials Section */}
-      <section className="px-4 py-16 md:px-8">
+      <section className="px-4 py-16 md:px-8" ref={testimonialsRef}>
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">
+          <motion.h2
+            animate={
+              testimonialsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            className="mb-12 text-center font-bold text-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          >
             What Our Clients Say
-          </h2>
+          </motion.h2>
           <MasonryGrid
             className="columns-1 gap-6 sm:columns-2 lg:columns-3"
             gap="1.5rem"
@@ -413,10 +511,26 @@ export default function Page() {
       <Separator />
 
       {/* Contact Section */}
-      <section className="px-4 py-16 md:px-8">
+      <section className="px-4 py-16 md:px-8" ref={contactRef}>
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Contact Us</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <motion.h2
+            animate={
+              contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            className="mb-12 text-center font-bold text-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          >
+            Contact Us
+          </motion.h2>
+          <motion.div
+            animate={
+              contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            className="grid gap-8 md:grid-cols-2"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          >
             <div className="space-y-6">
               <div>
                 <h3 className="mb-3 font-semibold text-lg">Store Location</h3>
@@ -460,17 +574,23 @@ export default function Page() {
                 title="Ms. Chen Expert Tailoring Location"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-8 text-center text-muted-foreground text-sm">
+      <motion.footer
+        className="border-t py-8 text-center text-muted-foreground text-sm"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
+        whileInView={{ opacity: 1 }}
+      >
         <p>
           © {new Date().getFullYear()} Ms. Chen Expert Tailoring. All rights
           reserved.
         </p>
-      </footer>
+      </motion.footer>
     </div>
   );
 }
