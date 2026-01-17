@@ -9,7 +9,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ms. Chen Expert Tailor",
+  title: "Ms. Chen Expert Tailoring",
   description:
     "Expert tailoring services - Alterations, Custom Tailoring, and Bridal & Formal Wear",
 };

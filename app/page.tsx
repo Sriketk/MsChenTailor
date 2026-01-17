@@ -32,41 +32,54 @@ export default function Page() {
   return (
     <div className="relative z-10 min-h-screen">
       <NoiseOverlay />
+      {/* Header */}
+      <header className="py-3 md:py-4">
+        <div className="mx-auto max-w-6xl">
+          <h1 className="text-center font-semibold text-2xl tracking-tight sm:text-3xl md:text-4xl">
+            Ms. Chen Expert Tailoring
+          </h1>
+        </div>
+      </header>
       {/* Hero Section */}
-      <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 py-16">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:gap-12">
-          <div className="flex-shrink-0">
-            <div className="relative size-64 overflow-hidden rounded-2xl md:size-80">
-              <Image
-                alt="Ms. Chen, Expert Tailor"
-                className="object-cover"
-                fill
-                priority
-                src="/chen_profile.jpg"
-              />
+      <section className="flex min-h-screen flex-col items-center justify-center pt-0 pb-8 sm:pb-12 md:pb-12">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+            {/* Image Section */}
+            <div className="-mt-4 w-full max-w-xl sm:-mt-2 sm:max-w-2xl">
+              <div className="relative mx-auto w-full overflow-hidden shadow-2xl">
+                <Image
+                  alt="Ms. Chen, Expert Tailor"
+                  className="h-auto w-full object-contain"
+                  height={700}
+                  priority
+                  src="/chen_profile.jpg"
+                  width={800}
+                />
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col items-center text-center md:items-start md:text-left">
-            <h1 className="mb-2 font-bold text-5xl tracking-tight md:text-7xl">
-              Ms. Chen
-            </h1>
-            <h2 className="mb-6 font-medium text-3xl text-muted-foreground md:text-4xl">
-              Expert Tailor
-            </h2>
-            <p className="mb-8 max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
-              Crafting perfection with precision, one stitch at a time. Your
-              trusted partner for expert tailoring services.
-            </p>
-            <Button
-              onClick={() => {
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              size="lg"
-            >
-              Get in Touch
-            </Button>
+
+            {/* Content Section */}
+            <div className="flex w-full max-w-3xl flex-col items-center space-y-4 text-left sm:space-y-6 md:space-y-8">
+              {/* Brief Introduction */}
+              <p className="w-full text-base text-foreground leading-relaxed sm:text-lg md:text-xl">
+                Meet Ms. Chen Expert Tailoring, one of the few businesses
+                remaining in East Broadway Mall. For over sixteen years, Ms.
+                Chen has been providing expert tailoring services with pride in
+                her craftsmanship and expertise. Whether it&apos;s a pair of
+                blue jeans or a fancy evening gown, she will always help you
+                alter your clothes until you&apos;re satisfied.
+              </p>
+
+              {/* Contact Information */}
+              <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row sm:gap-4">
+                <p className="text-base text-foreground sm:text-lg">
+                  88 E Broadway, Basement Level B42, New York, NY 10002
+                </p>
+                <p className="text-base text-foreground sm:text-lg">
+                  (917) 330-1538
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -300,7 +313,7 @@ export default function Page() {
       {/* Footer */}
       <footer className="border-t py-8 text-center text-muted-foreground text-sm">
         <p>
-          © {new Date().getFullYear()} Ms. Chen Expert Tailor. All rights
+          © {new Date().getFullYear()} Ms. Chen Expert Tailoring. All rights
           reserved.
         </p>
       </footer>
