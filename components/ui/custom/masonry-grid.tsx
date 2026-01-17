@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 /**
@@ -19,10 +19,11 @@ const MasonryGrid = <T,>({
   renderItem,
   className,
   gap = '1rem',
-  staggerDelay = 0.05,
+  staggerDelay = 0.03,
 }: MasonryGridProps<T>) => {
   const containerRef = React.useRef(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div
@@ -34,11 +35,11 @@ const MasonryGrid = <T,>({
       {items.map((item, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
           transition={{
-            duration: 0.6,
-            delay: index * staggerDelay,
+            duration: prefersReducedMotion ? 0 : 0.4,
+            delay: prefersReducedMotion ? 0 : Math.min(index * staggerDelay, 0.3),
             ease: [0.4, 0, 0.2, 1],
           }}
           className="mb-4 break-inside-avoid"
