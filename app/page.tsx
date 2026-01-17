@@ -81,7 +81,7 @@ export default function Page() {
                   className="h-auto w-full object-contain"
                   height={700}
                   priority
-                  src="/chen_profile.jpg"
+                  src="/chen/chen_profile.jpg"
                   width={800}
                 />
               </div>
