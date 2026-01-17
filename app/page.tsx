@@ -123,63 +123,74 @@ export default function Page() {
 
       {/* About Section */}
       <section className="px-4 py-16 md:px-8">
-        <div className="mx-auto max-w-4xl">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-3xl">About Ms. Chen</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-base leading-relaxed">
-              <p>
-                Meet Ms. Chen Expert Tailoring, one of the few businesses
-                remaining in East Broadway Mall.
-              </p>
-              <p>
-                Growing up in Fujian Lianjiang, Ms. Chen didn&apos;t have a lot
-                of opportunities. She could either become a hairdresser or a
-                seamstress. She was interested in cutting hair, but
-                unfortunately, a major illness left her disabled and made it
-                very difficult to use small haircutting tools.
-              </p>
-              <p>
-                As she was always interested in fashion, she taught herself how
-                to sew at 13. She started by helping her neighbors sew simple
-                garments, then apprenticed at a local shop before saving up
-                enough money to open her small business. Sewing brought her a
-                lot of satisfaction. She was skilled at her craft, and people
-                from neighboring regions would visit her shop to get their
-                clothes made and altered.
-              </p>
-              <p>
-                In 1993, Ms. Chen&apos;s husband came to the U.S. in search of
-                better economic opportunities. She tried for ten years before
-                successfully reuniting with her husband in 2003. After arriving,
-                she settled in Flushing and got into the beauty industry doing
-                at-home facials. However, she yearned to open a small business
-                again someday. Unfortunately, no storefronts were available in
-                Chinatown, so she worked as a seamstress at another clothing
-                store in the meantime. In 2004, she opened her first shop
-                outside East Broadway Mall. She chose that location as it was
-                convenient and attracted a lot of foot traffic. In 2006, she
-                moved her business inside the mall, and she&apos;s been there
-                ever since.
-              </p>
-              <p>
-                Sixteen years later, Ms. Chen continues to sew and mend clothes
-                for her customers in the basement of East Broadway Mall. She has
-                a diverse clientele and has even altered clothes for fashion
-                designers and models. During the COVID-19 pandemic, she was
-                closed for a year and a half. Loyal customers kept ringing her
-                phone, so she finally reopened her business in July 2021.
-              </p>
-              <p>
-                Ms. Chen prides herself on her craftsmanship and expertise.
-                Whether it&apos;s a pair of blue jeans or a fancy evening gown,
-                she will always help you alter your clothes until you&apos;re
-                satisfied. Visit her in person or give her a call at
-                917-330-1538 if you need her expert tailoring services!
-              </p>
-            </CardContent>
-          </Card>
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-6 text-center font-bold text-3xl">
+            About Ms. Chen
+          </h2>
+          <div className="space-y-6 text-lg leading-relaxed">
+            <div className="my-6 flex flex-col gap-6 md:flex-row md:items-start">
+              <div className="relative w-full flex-shrink-0 overflow-hidden md:w-auto md:max-w-xs">
+                <Image
+                  alt="Ms. Chen's tailoring shop"
+                  className="h-auto w-full object-cover"
+                  height={600}
+                  src="/chen/about/cream.jpg"
+                  width={300}
+                />
+              </div>
+              <div className="flex-1 space-y-4">
+                <p>
+                  Meet Ms. Chen Expert Tailoring, one of the few businesses
+                  remaining in East Broadway Mall.
+                </p>
+                <p>
+                  Growing up in Fujian Lianjiang, Ms. Chen didn&apos;t have a
+                  lot of opportunities. She could either become a hairdresser or
+                  a seamstress. She was interested in cutting hair, but
+                  unfortunately, a major illness left her disabled and made it
+                  very difficult to use small haircutting tools.
+                </p>
+                <p>
+                  As she was always interested in fashion, she taught herself
+                  how to sew at 13. She started by helping her neighbors sew
+                  simple garments, then apprenticed at a local shop before
+                  saving up enough money to open her small business. Sewing
+                  brought her a lot of satisfaction. She was skilled at her
+                  craft, and people from neighboring regions would visit her
+                  shop to get their clothes made and altered.
+                </p>
+                <p>
+                  In 1993, Ms. Chen&apos;s husband came to the U.S. in search of
+                  better economic opportunities. She tried for ten years before
+                  successfully reuniting with her husband in 2003. After
+                  arriving, she settled in Flushing and got into the beauty
+                  industry doing at-home facials. However, she yearned to open a
+                  small business again someday. Unfortunately, no storefronts
+                  were available in Chinatown, so she worked as a seamstress at
+                  another clothing store in the meantime. In 2004, she opened
+                  her first shop outside East Broadway Mall. She chose that
+                  location as it was convenient and attracted a lot of foot
+                  traffic. In 2006, she moved her business inside the mall, and
+                  she&apos;s been there ever since.
+                </p>
+              </div>
+            </div>
+            <p>
+              Sixteen years later, Ms. Chen continues to sew and mend clothes
+              for her customers in the basement of East Broadway Mall. She has a
+              diverse clientele and has even altered clothes for fashion
+              designers and models. During the COVID-19 pandemic, she was closed
+              for a year and a half. Loyal customers kept ringing her phone, so
+              she finally reopened her business in July 2021.
+            </p>
+            <p>
+              Ms. Chen prides herself on her craftsmanship and expertise.
+              Whether it&apos;s a pair of blue jeans or a fancy evening gown,
+              she will always help you alter your clothes until you&apos;re
+              satisfied. Visit her in person or give her a call at 917-330-1538
+              if you need her expert tailoring services!
+            </p>
+          </div>
         </div>
       </section>
 
