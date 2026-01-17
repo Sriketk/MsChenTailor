@@ -68,13 +68,20 @@ export default function Page() {
               </p>
 
               {/* Contact Information */}
-              <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row sm:gap-4">
-                <p className="text-base text-foreground sm:text-lg">
-                  88 E Broadway, Basement Level B42, New York, NY 10002
-                </p>
-                <p className="text-base text-foreground sm:text-lg">
-                  (917) 330-1538
-                </p>
+              <div className="w-full space-y-3">
+                <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row sm:gap-4">
+                  <p className="text-base text-foreground sm:text-lg">
+                    88 E Broadway, Basement Level B42, New York, NY 10002
+                  </p>
+                  <p className="text-base text-foreground sm:text-lg">
+                    (917) 330-1538
+                  </p>
+                </div>
+                <div className="w-full space-y-1 text-center text-base text-foreground sm:text-left sm:text-lg">
+                  <p>Sunday: 9:30 AM - 5 PM</p>
+                  <p>Monday: 11 AM - 5 PM</p>
+                  <p>Tuesday - Saturday: 9:30 AM - 7 PM</p>
+                </div>
               </div>
             </div>
           </div>
