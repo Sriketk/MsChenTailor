@@ -127,11 +127,6 @@ export default function Page() {
                     (917) 330-1538
                   </p>
                 </div>
-                <div className="w-full space-y-1 text-center text-base text-foreground sm:text-left sm:text-lg">
-                  <p>Sunday: 9:30 AM - 5 PM</p>
-                  <p>Monday: 11 AM - 5 PM</p>
-                  <p>Tuesday - Saturday: 9:30 AM - 7 PM</p>
-                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -521,7 +516,7 @@ export default function Page() {
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           >
-            Contact Us
+            Contact
           </motion.h2>
           <motion.div
             animate={
