@@ -196,52 +196,6 @@ export default function Page() {
 
       <Separator />
 
-      {/* Services Section */}
-      <section className="px-4 py-16 md:px-8">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Our Services</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <ScissorsIcon className="mb-2 size-8 text-primary" />
-                <CardTitle>Alterations & Repairs</CardTitle>
-                <CardDescription>
-                  Expert alterations to ensure the perfect fit. From hemming to
-                  taking in or letting out, we handle all your garment
-                  adjustments with precision.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <SparklesIcon className="mb-2 size-8 text-primary" />
-                <CardTitle>Custom Tailoring</CardTitle>
-                <CardDescription>
-                  Bespoke tailoring services for suits, dresses, and formal
-                  wear. Create one-of-a-kind pieces tailored specifically to
-                  your measurements and style preferences.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <HeartIcon className="mb-2 size-8 text-primary" />
-                <CardTitle>Bridal & Formal Wear</CardTitle>
-                <CardDescription>
-                  Specialized services for your most important occasions. From
-                  wedding gowns to formal evening wear, we ensure you look
-                  flawless on your special day.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
       {/* Testimonials Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl">
