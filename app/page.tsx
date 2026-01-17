@@ -86,6 +86,26 @@ export default function Page() {
 
       <Separator />
 
+      {/* Gallery Section */}
+      <section className="px-4 py-16 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-12 text-center font-bold text-4xl">Our Work</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <Card className="overflow-hidden p-0" key={i}>
+                <AspectRatio ratio={4 / 3}>
+                  <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
+                    <span className="text-sm">Image {i}</span>
+                  </div>
+                </AspectRatio>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
       {/* About Section */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-4xl">
@@ -153,26 +173,6 @@ export default function Page() {
                 </CardDescription>
               </CardHeader>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Gallery Section */}
-      <section className="px-4 py-16 md:px-8">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Our Work</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <Card className="overflow-hidden p-0" key={i}>
-                <AspectRatio ratio={4 / 3}>
-                  <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
-                    <span className="text-sm">Image {i}</span>
-                  </div>
-                </AspectRatio>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
