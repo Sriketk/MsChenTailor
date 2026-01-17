@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import GoogleReview from "@/components/ui/custom/google-review";
 import MasonryGrid from "@/components/ui/custom/masonry-grid";
+import RedditReview from "@/components/ui/custom/reddit-review";
+import TikTokEmbed from "@/components/ui/custom/tiktok-embed";
+import YelpReview from "@/components/ui/custom/yelp-review";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -201,40 +199,194 @@ export default function Page() {
           <h2 className="mb-12 text-center font-bold text-4xl">
             What Our Clients Say
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardDescription className="mb-2 italic">
-                  &quot;Ms. Chen transformed my wedding dress into a perfect
-                  fit. Her attention to detail is unmatched, and I felt
-                  absolutely beautiful on my special day.&quot;
-                </CardDescription>
-                <CardTitle className="text-base">— Sarah M.</CardTitle>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardDescription className="mb-2 italic">
-                  &quot;I&apos;ve been coming to Ms. Chen for years. She always
-                  makes my suits fit perfectly. Professional, reliable, and
-                  truly an expert in her craft.&quot;
-                </CardDescription>
-                <CardTitle className="text-base">— James T.</CardTitle>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardDescription className="mb-2 italic">
-                  &quot;The custom tailoring service exceeded my expectations.
-                  Ms. Chen took the time to understand exactly what I wanted,
-                  and the result was perfect.&quot;
-                </CardDescription>
-                <CardTitle className="text-base">— Maria L.</CardTitle>
-              </CardHeader>
-            </Card>
-          </div>
+          <MasonryGrid
+            className="columns-1 gap-6 sm:columns-2 lg:columns-3"
+            gap="1.5rem"
+            items={[
+              {
+                type: "google",
+                name: "Joy Yu",
+                stars: 5,
+                date: "a year ago",
+                description:
+                  "A few weeks ago, I brought four pairs of pants here to have the lengths altered. Ms. Chen told me it would take almost a month as she was quite busy. I just picked them up today, and every pair fits perfectly! She did an incredibly professional job. Highly recommend.",
+                href: "https://www.google.com/maps/place/Ms.+Chen+Expert+Tailoring",
+              },
+              {
+                type: "google",
+                name: "Andrew JK",
+                stars: 5,
+                date: "a month ago",
+                description:
+                  "I came to see Ms Chen to adjust three linen shirts and she was wonderful. She took the time to make the proper adjustments, even staying late to make some final tweaks. The price was also very reasonable. She was very nice and kind. I will definitely use her again next time I need alterations. Definitely recommend!",
+                href: "https://share.google/UMfdwjwwWvcvuah94",
+              },
+              {
+                type: "google",
+                name: "Ana Titla",
+                stars: 5,
+                date: "5 months ago",
+                description:
+                  "Best tailor in NYC. I come here whenever I need to alter my pants especially when they are a blind stitch, Ms. Chen does a very very good job. This is my second time bringing in my pants and she does a good job for a great price. Please make sure you are reviewing her, and not the other shop. She works really hard and has many loyal customers and it shows how good she is. I highly recommend.",
+                href: "https://share.google/nSirn1IcISJwaICqp",
+              },
+              {
+                type: "google",
+                name: "EFC EFC",
+                stars: 5,
+                date: "5 months ago",
+                description:
+                  "If you are seeking exceptional tailoring services in NYC look no further than Ms. Chen, she is a miracle worker! We were in a dire straits situation with a bridesmaid dress and Ms. Chen worked her magic. (Due to a mix-up the dress that arrived was 2 sizes too small and it would take 8 weeks for a new dress to arrive.) She was able to (discretely) add 6 inches!! to the sides by cutting fabric from the ample skirt section of the dress. The end result was amazing. Unless you had a magnifying glass, you could not tell the dress was altered at all. While she did request a couple of weeks to fix (due to high demand) the dress was ready on the promised date and the cost was more than reasonable. We are eternally grateful to Ms. Chen and her wonderful tailoring skills! I would highly recommend her for your tailoring needs. Added plus -- we discovered some cool little restaurants in surrounding area!",
+                href: "https://share.google/jbfDpM8m6FIfpKG2l",
+              },
+              {
+                type: "google",
+                name: "JL",
+                stars: 5,
+                date: "a year ago",
+                description:
+                  "Ms. Chen turned around a dress alteration (3 sizes too big) for me in 4 days despite being super busy. Her work is beautiful—she's clearly very good at her craft! If you're expecting a spick-and-span corporate-feeling customer service experience, this might not be the place for you; but if you don't mind getting to know a sweet and slightly chaotic auntie who takes a lot of pride in her work and isn't afraid to set boundaries with customers, come visit Ms. Chen ❤️",
+                href: "https://share.google/kJBnSC3VigK3rZGKp",
+              },
+              {
+                type: "google",
+                name: "Albert Chang",
+                stars: 5,
+                date: "a month ago",
+                description:
+                  "Best tailor in NYC! Incredibly detailed work for my pants that other places said wasn't possible and fair prices. The owner is also super friendly Make sure to go to the right location, right under the stairs and take a left!",
+                href: "https://www.google.com/maps/place/Ms.+Chen+Expert+Tailoring",
+              },
+              {
+                type: "google",
+                name: "Rachel Kalt",
+                stars: 5,
+                date: "2 years ago",
+                description:
+                  "I was only back in NY for a month and had 3 vintage items and a suit that I needed to be tailored in order to wear them. I had an upcoming event in California and wanted to wear these pieces. I took a risk and brought all four items to the tailor at once because I didn't have time to test a piece first. My risk more than paid off — Ms. Chen is a GENIUS!! I couldn't be happier with everything. She worked on a pair of vintage fringe pants, a silk dress with a complicated tear, a velour floor length dress, and a suit. Despite our language barrier, she took everything in, shortened everything, and repaired it all to PERFECTION ✨. Good tailoring, that doesn't cost a fortune, is hard to come by in NY and Ms. Chen is as good as they get. I will exclusively be bringing all my items that need tailoring to her ❤️",
+                href: "https://share.google/1TPWMMJfx3nPPVRf7",
+              },
+              {
+                type: "google",
+                name: "Liz F",
+                stars: 5,
+                date: "2 years ago",
+                description:
+                  "Amazing experience! I had a dress and jacket that I didn't feel good in, but absolutely loved. Ms.Chen did excellent work taking them in and I'm so happy to be able to wear these clothes!!! Friendly and affordable. I caught her at a busy time, but turn around was very reasonable. I already have other projects in mind. No I can't read or speak Chinese, but we pantomimed and texted just fine!",
+                href: "https://share.google/7AqBrwrrSyuKMtEWh",
+              },
+              {
+                type: "google",
+                name: "Ginger Chan",
+                stars: 5,
+                date: "a year ago",
+                description:
+                  "Ms. Chen goes above and beyond. I originally only came in for a hem and she offered to take in the waist of my dress for free! She is a master seamstress and her work is better than any large department store's tailoring department. Ms. Chen knows what she's doing and she definitely didn't disappoint.",
+                href: "https://share.google/IE5dbEtEv2bRx9lFX",
+              },
+              {
+                type: "google",
+                name: "Samantha Pauline",
+                stars: 5,
+                date: "9 months ago",
+                description:
+                  "I've brought around 10 pieces to Ms Chen over the past six months and I plan to bring my entire closet in at some point. She really understands how clothing should fit. If she's overloaded you might have to wait a bit, but it's worth it. I don't know what I'll do if she retires. Note: make sure to photograph the clothing you leave with her and text her the picture and her quote; it's also a good idea to text or call the day before you're supposed to come for pick up.",
+                href: "https://share.google/XZv2wIHTpHiwOOWcm",
+              },
+              {
+                type: "yelp",
+                name: "Lilly D.",
+                stars: 5,
+                date: "Jul 20, 2023",
+                location: "New York, NY",
+                description:
+                  "Ms. Chen is sweet, fast and accommodating. Her prices are extremely reasonable. Mall sadly a bit run down but don't let that dissuade you from finding Ms. Chen! Go down the stairs and make a left and another left, under the stairs and she will be there on her sewing machine! Thank you Ms. Chen!",
+                href: "https://www.yelp.com",
+              },
+              {
+                type: "reddit",
+                author: "miffy_the_destroyer",
+                date: "2y ago",
+                description:
+                  "Ms Chen in Chinatown is a TAILORING GENIUS and has very low prices! You can check out her Yelp / Google reviews. She's going to be on vacation 5/7 - 5/24, so don't expect fast turn around time while she's away tho.",
+                href: "https://www.reddit.com",
+                upvotes: 2,
+              },
+              {
+                type: "tiktok",
+                username: "internetelena",
+                caption: "I will miss her dearly 🥺...",
+                likes: 5535,
+                views: 69_400,
+                href: "https://www.tiktok.com/@internetelena",
+                videoUrl:
+                  "https://www.tiktok.com/@internetelena/video/7495874007649094958",
+              },
+              {
+                type: "tiktok",
+                username: "vivecachow",
+                caption: "",
+                likes: 0,
+                views: 0,
+                href: "https://www.tiktok.com/@vivecachow",
+                videoUrl:
+                  "https://www.tiktok.com/@vivecachow/video/7414903891814403370",
+              },
+              {
+                type: "tiktok",
+                username: "emilybian_",
+                caption: "",
+                likes: 0,
+                views: 0,
+                href: "https://www.tiktok.com/@emilybian_",
+                videoUrl:
+                  "https://www.tiktok.com/@emilybian_/video/7333001509438786859",
+              },
+            ]}
+            renderItem={(review) => (
+              <Card className="mb-6 break-inside-avoid overflow-hidden rounded-none p-0">
+                <CardContent className="pt-6">
+                  {review.type === "google" && (
+                    <GoogleReview
+                      date={(review as { date: string }).date}
+                      description={
+                        (review as { description: string }).description
+                      }
+                      href={(review as { href?: string }).href}
+                      name={(review as { name: string }).name}
+                      stars={(review as { stars: number }).stars}
+                    />
+                  )}
+                  {review.type === "yelp" && (
+                    <YelpReview
+                      date={(review as { date: string }).date}
+                      description={
+                        (review as { description: string }).description
+                      }
+                      href={(review as { href?: string }).href}
+                      location={(review as { location?: string }).location}
+                      name={(review as { name: string }).name}
+                      stars={(review as { stars: number }).stars}
+                    />
+                  )}
+                  {review.type === "reddit" && (
+                    <RedditReview
+                      author={(review as { author: string }).author}
+                      date={(review as { date: string }).date}
+                      description={
+                        (review as { description: string }).description
+                      }
+                      href={(review as { href?: string }).href}
+                      upvotes={(review as { upvotes?: number }).upvotes}
+                    />
+                  )}
+                  {review.type === "tiktok" && review.videoUrl && (
+                    <TikTokEmbed videoUrl={review.videoUrl} />
+                  )}
+                </CardContent>
+              </Card>
+            )}
+          />
         </div>
       </section>
 
