@@ -61,7 +61,7 @@ function HeroSection({
 }) {
   return (
     <section
-      className="flex min-h-screen flex-col items-center justify-center pt-0 pb-8 sm:pb-12 md:pb-12"
+      className="flex flex-col items-center justify-center pt-8 pb-8 sm:pt-12 sm:pb-12 md:pt-16 md:pb-12"
       ref={heroRef}
     >
       <div className="mx-auto w-full max-w-4xl">
@@ -72,7 +72,7 @@ function HeroSection({
                 ? { opacity: 1, scale: 1 }
                 : { opacity: 0, scale: prefersReducedMotion ? 1 : 0.95 }
             }
-            className="-mt-4 w-full max-w-xl sm:-mt-2 sm:max-w-2xl"
+            className="w-full max-w-xl sm:max-w-2xl"
             initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.95 }}
             transition={{
               duration: prefersReducedMotion ? 0 : 0.6,
