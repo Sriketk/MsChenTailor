@@ -31,8 +31,6 @@ export default function RedditReview({
           width={20}
         />
         <span className="text-sm font-medium text-foreground">{author}</span>
-        <span className="text-sm text-muted-foreground">•</span>
-        <span className="text-sm text-muted-foreground">{date}</span>
         {upvotes !== undefined && (
           <>
             <span className="text-sm text-muted-foreground">•</span>

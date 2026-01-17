@@ -1,17 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import GoogleReview from "@/components/ui/custom/google-review";
 import MasonryGrid from "@/components/ui/custom/masonry-grid";
 import RedditReview from "@/components/ui/custom/reddit-review";
 import TikTokEmbed from "@/components/ui/custom/tiktok-embed";
 import YelpReview from "@/components/ui/custom/yelp-review";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 
 function NoiseOverlay() {
   return (
@@ -400,87 +396,53 @@ export default function Page() {
       <Separator />
 
       {/* Contact Section */}
-      <section className="px-4 py-16 md:px-8" id="contact">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center font-bold text-4xl">Get in Touch</h2>
+      <section className="px-4 py-16 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-12 text-center font-bold text-4xl">Contact Us</h2>
           <div className="grid gap-8 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-medium">Address</p>
-                  <p className="text-muted-foreground text-sm">
-                    123 Main Street
-                    <br />
-                    Your City, ST 12345
-                  </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="mb-3 font-semibold text-lg">Store Location</h3>
+                <p className="text-muted-foreground">
+                  88 E Broadway
+                  <br />
+                  Basement Level B42
+                  <br />
+                  New York, NY 10002
+                </p>
+                <p className="mt-2 font-bold text-foreground">
+                  Take 2 lefts once you get to the bottom of the stairs!
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-3 font-semibold text-lg">Phone</h3>
+                <a
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  href="tel:+19173301538"
+                >
+                  (917) 330-1538
+                </a>
+              </div>
+              <div>
+                <h3 className="mb-3 font-semibold text-lg">Hours</h3>
+                <div className="space-y-1 text-muted-foreground">
+                  <p>Sunday: 9:30 AM - 5 PM</p>
+                  <p>Monday: 11 AM - 5 PM</p>
+                  <p>Tuesday - Saturday: 9:30 AM - 7 PM</p>
                 </div>
-                <Separator />
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-muted-foreground text-sm">
-                    (555) 123-4567
-                  </p>
-                </div>
-                <Separator />
-                <div>
-                  <p className="font-medium">Hours</p>
-                  <p className="text-muted-foreground text-sm">
-                    Monday - Friday: 9:00 AM - 6:00 PM
-                    <br />
-                    Saturday: 10:00 AM - 4:00 PM
-                    <br />
-                    Sunday: Closed
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <FieldGroup>
-                    <Field>
-                      <FieldLabel htmlFor="name">Name</FieldLabel>
-                      <Input id="name" placeholder="Your name" required />
-                    </Field>
-                    <Field>
-                      <FieldLabel htmlFor="email">Email</FieldLabel>
-                      <Input
-                        id="email"
-                        placeholder="your.email@example.com"
-                        required
-                        type="email"
-                      />
-                    </Field>
-                    <Field>
-                      <FieldLabel htmlFor="phone">Phone</FieldLabel>
-                      <Input
-                        id="phone"
-                        placeholder="(555) 123-4567"
-                        type="tel"
-                      />
-                    </Field>
-                    <Field>
-                      <FieldLabel htmlFor="message">Message</FieldLabel>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell us about your tailoring needs..."
-                        rows={5}
-                      />
-                    </Field>
-                    <Button className="w-full" type="submit">
-                      Send Message
-                    </Button>
-                  </FieldGroup>
-                </form>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+            <div className="w-full overflow-hidden">
+              <iframe
+                allowFullScreen
+                className="h-full min-h-[400px] w-full rounded-lg"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=88+E+Broadway,+New+York,+NY+10002&output=embed"
+                style={{ border: 0 }}
+                title="Ms. Chen Expert Tailoring Location"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -33,21 +33,18 @@ export default function GoogleReview({
           />
           <h3 className="font-semibold text-foreground">{name}</h3>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-0.5">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                className={cn(
-                  "size-4",
-                  i < stars
-                    ? "fill-yellow-400 text-yellow-400"
-                    : "fill-muted text-muted-foreground"
-                )}
-              />
-            ))}
-          </div>
-          <span className="text-sm text-muted-foreground">{date}</span>
+        <div className="flex items-center gap-0.5">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              className={cn(
+                "size-4",
+                i < stars
+                  ? "fill-yellow-400 text-yellow-400"
+                  : "fill-muted text-muted-foreground"
+              )}
+            />
+          ))}
         </div>
       </div>
       <p className="text-sm leading-relaxed text-muted-foreground">
